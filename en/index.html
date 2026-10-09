@@ -5,147 +5,91 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>LithoShape3D — Turn your photos into glowing 3D-printed objects</title>
 <meta name="description" content="LithoShape3D turns your photos into lithophanes, light spheres and clocks, ready to 3D print. For Windows and Mac. Everything stays on your computer.">
-<meta property="og:title" content="LithoShape3D — your photos as glowing objects">
-<meta property="og:description" content="Lithophanes, LithoSphere, LithoClock: from photo to 3D print file, with a lit preview before printing.">
-<meta property="og:image" content="../assets/img/lithosphere.jpg">
+<meta name="theme-color" content="#0b0e14">
+<meta property="og:type" content="website"><meta property="og:title" content="LithoShape3D — your photos as glowing objects"><meta property="og:description" content="LithoShape3D turns your photos into lithophanes, light spheres and clocks, ready to 3D print. For Windows and Mac. Everything stays on your computer.">
+<meta property="og:image" content="../assets/img/og.jpg"><meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../assets/img/logo.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="fr" href="../">
+<link rel="preload" href="../assets/fonts/Inter-Variable.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="stylesheet" href="../assets/css/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"LithoShape3D","applicationCategory":"MultimediaApplication","operatingSystem":"Windows, macOS","description":"LithoShape3D turns your photos into lithophanes, light spheres and clocks, ready to 3D print. For Windows and Mac. Everything stays on your computer."}</script>
 </head>
 <body>
-<header class="top">
-  <div class="wrap bar">
-    <a class="brand" href="#"><img src="../assets/img/logo.svg" alt="" width="30" height="30"><b>Litho<span>Shape3D</span></b></a>
-    <button class="burger" aria-label="Menu" aria-expanded="false">Menu</button>
-    <nav class="main">
-      <a href="#apercu">Lit preview</a><a href="#modules">Creations</a><a href="#comment">How it works</a><a href="#telecharger">Download</a><a href="#faq">FAQ</a>
-      <a class="lang" href="../" hreflang="fr">FR</a>
-    </nav>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap bar">
+  <a class="brand" href="#"><img src="../assets/img/logo.svg" alt="" width="32" height="32"><b>Litho<span>Shape3D</span></b></a>
+  <button class="burger" aria-label="Menu" aria-expanded="false">Menu</button>
+  <nav class="main" aria-label="Navigation"><a href="#apercu">Lit preview</a><a href="#modules">Creations</a><a href="#comment">How it works</a><a href="#atouts">Features</a><a href="#faq">FAQ</a><a class="nav-cta" href="#telecharger">Download</a><a class="lang" href="../" hreflang="fr">FR</a></nav>
+</div></header>
+<main id="main">
+<section class="hero"><div class="wrap grid">
+  <div>
+    <div class="kicker">For Windows and Mac</div>
+    <h1>Your photos, as <em>glowing objects</em>.</h1>
+    <p class="lead">LithoShape3D turns a photo into a lithophane, a sphere or a clock, ready to 3D print. You see the <strong>lit</strong> result before you even start printing.</p>
+    <div class="cta"><a class="btn" href="#telecharger">Download for free</a><a class="btn ghost" href="https://le-belge.github.io/LithoShape3D-releases/guide/">Read the user guide</a></div>
+    <ul class="ticks"><li>Free preview</li><li>Your photos stay with you</li><li>STL and 3MF files</li></ul>
   </div>
-</header>
-
-<main>
-<section class="hero">
-  <div class="wrap grid">
-    <div>
-      <div class="kicker">Windows · macOS</div>
-      <h1>Your photos, as <em>glowing objects</em>.</h1>
-      <p class="lead">LithoShape3D turns a photo into a lithophane, a sphere or a clock, ready to 3D print. You see the <strong>lit</strong> result before you even start printing.</p>
-      <div class="cta">
-        <a class="btn" href="#telecharger">Download for free</a>
-        <a class="btn ghost" href="https://le-belge.github.io/LithoShape3D-releases/guide/">Read the user guide</a>
-      </div>
-      <p class="note">The preview is free. A license is needed to create print files. Your photos stay on your computer.</p>
-    </div>
-    <div class="hero-img"><img src="../assets/img/lithosphere.jpg" width="960" height="620" alt="A 3D-printed light sphere with a photo that appears when lit"></div>
+  <div class="stage"><div class="halo"></div>
+    <div class="frame"><picture><source srcset="../assets/img/avant-eteinte.webp" type="image/webp"><img src="../assets/img/avant-eteinte.jpg" width="1100" height="1100" alt="Unlit lithophane: only relief" fetchpriority="high"></picture><div class="lit"><picture><source srcset="../assets/img/apres-allumee.webp" type="image/webp"><img src="../assets/img/apres-allumee.jpg" width="1100" height="1100" alt="The same lithophane, lit: the photo appears" loading="lazy" decoding="async"></picture></div></div>
+    <div class="switch" role="group" aria-label="Off / Lit"><button data-state="off" aria-pressed="true">Off</button><button data-state="on" aria-pressed="false">Lit</button></div>
   </div>
-</section>
+</div></section>
+<div class="strip"><div class="wrap"><b>Your files open in common slicers</b><span class="chip">Bambu Studio</span><span class="chip">OrcaSlicer</span><span class="chip">PrusaSlicer</span><span class="chip">Cura</span></div></div>
 
-<section id="apercu">
-  <div class="wrap center">
-    <h2>Off, it is just relief. Lit, it is your photo.</h2>
-    <p class="sub">A lithophane is thicker or thinner depending on the photo: light behind the piece reveals the image. Drag the slider to see the difference.</p>
-    <div class="compare" role="group" aria-label="Comparison of the piece off and lit">
-      <img src="../assets/img/apres-allumee.jpg" alt="The lit lithophane: the photo appears" width="1100" height="1100">
-      <img id="cmp-top" class="top" src="../assets/img/avant-eteinte.jpg" alt="The unlit lithophane: only relief" width="1100" height="1100">
-      <div id="cmp-handle" class="handle"></div>
-      <span class="tag l">Off</span><span class="tag r">Lit</span>
-      <input id="cmp" type="range" min="0" max="100" value="50" aria-label="Off / lit slider">
-    </div>
+<section id="apercu"><div class="wrap compare-wrap">
+  <div class="rv">
+    <div class="eyebrow">The magic of light</div><h2>Off, it is just relief. Lit, it is your photo.</h2><p class="sub" style="margin-bottom:0">A lithophane is thicker or thinner depending on the photo. Drag the slider to see what light changes.</p>
+    <ul class="facts"><li><i>1</i><div><b>Variable thickness</b><p>Dark areas of the photo are thicker, light areas are thinner.</p></div></li><li><i>2</i><div><b>Light does the rest</b><p>A light source behind the piece shines through the plastic: the image appears.</p></div></li><li><i>3</i><div><b>See it before printing</b><p>The “Lit” button in the software simulates this result on your screen.</p></div></li></ul>
   </div>
-</section>
-
-<section id="modules" class="alt">
-  <div class="wrap">
-    <h2>Three creations, one software</h2>
-    <p class="sub">Load a photo, pick a shape, adjust: the software handles the geometry.</p>
-    <div class="cards">
-      <article class="card"><img src="../assets/img/lithophanie.jpg" width="960" height="620" alt="Lit flat lithophane" loading="lazy"><div class="in"><h3>Lithophane</h3><p>Flat panel, arch or half-cylinder, with a lighting stand if you wish.</p></div></article>
-      <article class="card"><img src="../assets/img/lithosphere.jpg" width="960" height="620" alt="Light sphere with a photo" loading="lazy"><div class="in"><h3>LithoSphere</h3><p>A photo on a glowing sphere, with cap, riser and base.</p></div></article>
-      <article class="card"><img src="../assets/img/lithoclock.jpg" width="960" height="620" alt="Photo clock with numerals" loading="lazy"><div class="in"><h3>LithoClock</h3><p>A clock from your photo: numerals, case and frame. In relief, or flat in several colors.</p></div></article>
-    </div>
+  <div class="compare rv d2" role="group" aria-label="Off / lit slider">
+    <picture><source srcset="../assets/img/apres-allumee.webp" type="image/webp"><img src="../assets/img/apres-allumee.jpg" width="1100" height="1100" alt="The same lithophane, lit: the photo appears" loading="lazy" decoding="async"></picture>
+    <div id="cmp-top" class="top"><picture><source srcset="../assets/img/avant-eteinte.webp" type="image/webp"><img src="../assets/img/avant-eteinte.jpg" width="1100" height="1100" alt="Unlit lithophane: only relief" loading="lazy" decoding="async"></picture></div>
+    <div id="cmp-handle" class="handle"></div><span class="tag l">Off</span><span class="tag r">Lit</span>
+    <input id="cmp" type="range" min="0" max="100" value="50" aria-label="Off / lit slider">
   </div>
-</section>
+</div></section>
 
-<section id="comment">
-  <div class="wrap">
-    <h2>From photo to print file</h2>
-    <p class="sub">Three steps, no complicated settings: the software suggests recommended values.</p>
-    <div class="steps">
-      <div class="step"><h3>Add your photo</h3><p>JPG, PNG or SVG. Crop, zoom and reframe to the format you want. Automatic background removal is available (model downloaded once).</p></div>
-      <div class="step"><h3>Choose and look</h3><p>Shape, size, thickness. The 3D preview updates, with the <strong>Lit</strong> button to see the backlit result.</p></div>
-      <div class="step"><h3>Create the files</h3><p>The software exports STL files (and multicolor 3MF) that you open in your slicer, such as Bambu Studio, OrcaSlicer, PrusaSlicer or Cura.</p></div>
-    </div>
+<section id="modules" class="alt"><div class="wrap">
+  <div class="rv"><div class="eyebrow">Creations</div><h2>Three creations, one software</h2><p class="sub">Load a photo, pick a shape, adjust: the software handles the geometry.</p></div>
+  <div class="tabs rv" role="tablist"><button class="tab" role="tab" id="t-litho" aria-controls="p-litho" aria-selected="true" tabindex="0">Lithophane</button><button class="tab" role="tab" id="t-sphere" aria-controls="p-sphere" aria-selected="false" tabindex="-1">LithoSphere</button><button class="tab" role="tab" id="t-clock" aria-controls="p-clock" aria-selected="false" tabindex="-1">LithoClock</button></div>
+  <div class="rv"><div class="panel on" id="p-litho" role="tabpanel" aria-labelledby="t-litho"><div><h3>The classic glowing panel</h3><p>A photo on a flat or curved panel, with a lighting stand if you wish.</p><ul><li>Flat, soft arc, standard arc, wide arc or half-cylinder</li><li>Crop, zoom and rotate the image</li><li>Printable lighting stand (Bambu Lab Lamp Kit 001)</li></ul><a class="btn small" href="#telecharger">Download</a></div><div class="shot"><div class="win"><div class="tb"><i></i><i></i><i></i></div><picture><source srcset="../assets/img/app-lithophanie.webp" type="image/webp"><img src="../assets/img/app-lithophanie.jpg" width="1600" height="1004" alt="Software screenshot: lithophane and 3D preview" loading="lazy" decoding="async"></picture></div><div class="prod"><picture><source srcset="../assets/img/lithophanie.webp" type="image/webp"><img src="../assets/img/lithophanie.jpg" width="960" height="620" alt="Glowing lithophane" loading="lazy" decoding="async"></picture></div></div></div><div class="panel" id="p-sphere" role="tabpanel" aria-labelledby="t-sphere"><div><h3>A sphere that lights up</h3><p>One or several photos on a glowing sphere, with cap, riser and base.</p><ul><li>Automatic placement of several photos</li><li>Caps, riser and base to print</li><li>Lit preview and exploded view for assembly</li></ul><a class="btn small" href="#telecharger">Download</a></div><div class="shot"><div class="win"><div class="tb"><i></i><i></i><i></i></div><picture><source srcset="../assets/img/app-lithosphere.webp" type="image/webp"><img src="../assets/img/app-lithosphere.jpg" width="1600" height="1004" alt="Software screenshot: LithoSphere" loading="lazy" decoding="async"></picture></div><div class="prod"><picture><source srcset="../assets/img/lithosphere.webp" type="image/webp"><img src="../assets/img/lithosphere.jpg" width="960" height="620" alt="Glowing sphere with a photo" loading="lazy" decoding="async"></picture></div></div></div><div class="panel" id="p-clock" role="tabpanel" aria-labelledby="t-clock"><div><h3>A clock in your image</h3><p>A clock made from your photo: numerals, case and frame.</p><ul><li>Light or dark numerals</li><li>In glowing relief, or flat in several colors</li><li>Case and frame included</li></ul><a class="btn small" href="#telecharger">Download</a></div><div class="shot"><div class="win"><div class="tb"><i></i><i></i><i></i></div><picture><source srcset="../assets/img/app-lithoclock.webp" type="image/webp"><img src="../assets/img/app-lithoclock.jpg" width="1600" height="1004" alt="Software screenshot: LithoClock" loading="lazy" decoding="async"></picture></div><div class="prod"><picture><source srcset="../assets/img/lithoclock.webp" type="image/webp"><img src="../assets/img/lithoclock.jpg" width="960" height="620" alt="Photo clock with numerals" loading="lazy" decoding="async"></picture></div></div></div></div>
+</div></section>
+
+<section id="comment"><div class="wrap">
+  <div class="rv center"><div class="eyebrow">Simple</div><h2>From photo to print file</h2><p class="sub">Three steps, no complicated settings: the software suggests recommended values.</p></div>
+  <div class="steps"><div class="step rv d1" data-n="1"><svg viewBox="0 0 48 48"><rect x="6" y="9" width="36" height="30" rx="5"/><circle cx="17" cy="21" r="4"/><path d="M6 33l11-9 8 6 8-8 9 9"/></svg><h3>Add your photo</h3><p>JPG, PNG or SVG. Crop, zoom and reframe to the format you want. Automatic background removal is available (model downloaded once).</p></div><div class="step rv d2" data-n="2"><svg viewBox="0 0 48 48"><path d="M24 6c-8 0-14 6-14 14 0 5 3 8 5 11v5h18v-5c2-3 5-6 5-11 0-8-6-14-14-14z"/><path d="M19 41h10M21 45h6"/><path d="M24 15v9l5 3"/></svg><h3>Choose and look</h3><p>Shape, size, thickness. The 3D preview updates, with the “Lit” button to see the backlit result.</p></div><div class="step rv d3" data-n="3"><svg viewBox="0 0 48 48"><path d="M24 6v24M14 22l10 10 10-10"/><path d="M8 38h32"/></svg><h3>Create the files</h3><p>The software exports STL files (and multicolor 3MF) that you open in your slicer.</p></div></div>
+</div></section>
+
+<section id="atouts" class="alt"><div class="wrap">
+  <div class="rv"><div class="eyebrow">Features</div><h2>Built for real prints</h2><p class="sub">What makes the difference between a nice image and a successful part.</p></div>
+  <div class="bento">
+    <div class="bx b-lg rv"><div class="ic">◐</div><h4>Lit preview and exploded view</h4><p>See the backlit result before printing, and understand the assembly before you start the first part.</p><picture><source srcset="../assets/img/app-lithophanie.webp" type="image/webp"><img src="../assets/img/app-lithophanie.jpg" width="1600" height="1004" alt="Software screenshot: 3D preview of a lithophane" loading="lazy" decoding="async"></picture></div>
+    <div class="bx b-md rv"><div class="ic">▦</div><h4>“Flat” mode</h4><p>2 to 4 colors printed flat, one filament per color (up to the 4 slots of an AMS), no supports.</p></div><div class="bx b-md rv"><div class="ic">✓</div><h4>Checked files</h4><p>The software checks that meshes are closed and printable, and “Help → Check a file” re-reads an exported file.</p></div><div class="bx b-sm rv"><div class="ic">⌂</div><h4>On your computer, not in the cloud</h4><p>Calculations run on your computer: your photos are never sent over the internet.</p></div><div class="bx b-sm rv"><div class="ic">⬚</div><h4>Windows and Mac</h4><p>Windows 10/11, macOS Apple Silicon and Intel. Interface in French and English.</p></div><div class="bx b-sm rv"><div class="ic">?</div><h4>A step-by-step guide</h4><p>Online installation and user guide, always up to date.</p></div>
   </div>
-</section>
+</div></section>
 
-<section class="alt">
-  <div class="wrap">
-    <h2>The software in pictures</h2>
-    <p class="sub">A clear interface designed to go from photo to part without detours.</p>
-    <div class="shots">
-      <figure class="shot"><img src="../assets/img/app-lithophanie.jpg" width="1600" height="1004" alt="LithoShape3D screenshot: settings and 3D preview of a lithophane" loading="lazy"><figcaption>Lithophane: photo, shape, lighting, size and 3D preview.</figcaption></figure>
-      <figure class="shot"><img src="../assets/img/app-lithosphere.jpg" width="1600" height="1004" alt="LithoShape3D screenshot: LithoSphere" loading="lazy"><figcaption>LithoSphere: a glowing sphere with your photos.</figcaption></figure>
-      <figure class="shot"><img src="../assets/img/app-lithoclock.jpg" width="1600" height="1004" alt="LithoShape3D screenshot: LithoClock" loading="lazy"><figcaption>LithoClock: a custom clock.</figcaption></figure>
-      <figure class="shot"><img src="../assets/img/app-accueil.jpg" width="1600" height="1004" alt="LithoShape3D home screenshot" loading="lazy"><figcaption>Home: choose your creation.</figcaption></figure>
-    </div>
-  </div>
-</section>
+<section><div class="wrap">
+  <div class="rv"><div class="eyebrow">Ideas</div><h2>What you can create</h2></div>
+  <div class="ideas" style="margin-top:34px"><div class="idea rv d1"><b>A gift that lights up</b><span>A photo turned into a one-of-a-kind object, to give.</span></div><div class="idea rv d2"><b>A family keepsake</b><span>A moment to keep, under a different light.</span></div><div class="idea rv d3"><b>A custom night light</b><span>A soft light, with an image that matters.</span></div><div class="idea rv d1"><b>A personalised clock</b><span>Your photo, with the hours on it.</span></div></div>
+</div></section>
 
-<section>
-  <div class="wrap">
-    <h2>Built for real prints</h2>
-    <p class="sub">What makes the difference between a nice image and a successful part.</p>
-    <div class="feats">
-      <div class="feat"><i>1</i><div><h4>Lit preview</h4><p>See the backlit result before printing, plus an exploded view to understand the assembly.</p></div></div>
-      <div class="feat"><i>2</i><div><h4>“Flat” mode</h4><p>2 to 4 colors printed flat, one filament per color (up to the 4 slots of an AMS), no supports.</p></div></div>
-      <div class="feat"><i>3</i><div><h4>File checks</h4><p>The software checks that meshes are closed and printable, and can verify your files with “Help → Check a file”.</p></div></div>
-      <div class="feat"><i>4</i><div><h4>On your computer, not in the cloud</h4><p>Calculations run on your computer: your photos are never sent over the internet.</p></div></div>
-      <div class="feat"><i>5</i><div><h4>Windows and Mac</h4><p>Windows 10/11, macOS Apple Silicon and Intel. Interface in French and English.</p></div></div>
-      <div class="feat"><i>6</i><div><h4>A step-by-step guide</h4><p>Online installation and user guide, always up to date.</p></div></div>
-    </div>
-  </div>
-</section>
+<section id="telecharger" class="alt"><div class="wrap center">
+  <div class="rv"><div class="eyebrow">Download</div><h2>Download LithoShape3D</h2><p class="sub">The preview is free. To create print files you need a license: a test license is available through the beta program.</p></div>
+  <div class="dl"><div class="card rv d1"><div class="os">🪟</div><h3>Windows</h3><p>Windows 10 / 11</p><a class="btn small" href="https://github.com/le-belge/LithoShape3D-releases/releases/latest">Download</a></div><div class="card rv d2"><div class="os"></div><h3>Mac Apple Silicon</h3><p>M1, M2, M3, M4</p><a class="btn small" href="https://github.com/le-belge/LithoShape3D-releases/releases/latest">Download</a></div><div class="card rv d3"><div class="os"></div><h3>Mac Intel</h3><p>Intel processors</p><a class="btn small" href="https://github.com/le-belge/LithoShape3D-releases/releases/latest">Download</a></div></div>
+  <p class="rv" style="color:var(--muted);font-size:15px;margin:30px auto 0;max-width:680px">The software is not yet signed with Microsoft and Apple: a warning appears on first launch, this is expected. <a href="https://le-belge.github.io/LithoShape3D-releases/guide/#installation-en">The guide explains how to allow it in one minute.</a></p>
+  <p class="rv" style="margin-top:22px"><a class="btn ghost" href="https://le-belge.github.io/LithoShape3D-releases/beta/">Request a test license</a></p>
+</div></section>
 
-<section id="telecharger" class="alt">
-  <div class="wrap center">
-    <h2>Download LithoShape3D</h2>
-    <p class="sub">The preview is free. To create print files you need a license: a test license is available through the beta program.</p>
-    <div class="dl">
-      <div class="card"><div class="in"><div class="os">🪟</div><h3>Windows</h3><p>Windows 10 / 11</p><p style="margin-top:14px"><a class="btn small" href="https://github.com/le-belge/LithoShape3D-releases/releases/latest">Download</a></p></div></div>
-      <div class="card"><div class="in"><div class="os"></div><h3>Mac Apple Silicon</h3><p>M1, M2, M3, M4</p><p style="margin-top:14px"><a class="btn small" href="https://github.com/le-belge/LithoShape3D-releases/releases/latest">Download</a></p></div></div>
-      <div class="card"><div class="in"><div class="os"></div><h3>Mac Intel</h3><p>Intel processors</p><p style="margin-top:14px"><a class="btn small" href="https://github.com/le-belge/LithoShape3D-releases/releases/latest">Download</a></p></div></div>
-    </div>
-    <p class="note" style="margin-top:26px">The software is not yet signed with Microsoft and Apple: a warning appears on first launch, this is expected. <a href="https://le-belge.github.io/LithoShape3D-releases/guide/#installation">The guide explains how to allow it in one minute.</a></p>
-    <p style="margin-top:18px"><a class="btn ghost" href="https://le-belge.github.io/LithoShape3D-releases/beta/">Request a test license</a></p>
-  </div>
-</section>
+<section id="faq"><div class="wrap" style="max-width:840px">
+  <div class="rv center"><h2>Frequently asked questions</h2><p class="sub">Another question? <a href="mailto:purenova3d@free.fr">Write to us</a>.</p></div>
+  <div class="rv"><details><summary>What is a lithophane?</summary><p>A 3D-printed plate whose thickness varies with the photo: thick areas let little light through, thin areas let a lot through. Lit from behind, the photo appears.</p></details><details><summary>Are my photos sent over the internet?</summary><p>No. Calculations run on your computer and your photos never leave it. Only license activation contacts the license server (key and device identifier).</p></details><details><summary>Which files does it produce, and with which printers?</summary><p>STL files, and multicolor 3MF for the “Flat” mode. They open in common slicers (Bambu Studio, OrcaSlicer, PrusaSlicer, Cura). The software does not drive the printer: your slicer prepares the print.</p></details><details><summary>Why a warning during installation?</summary><p>The software is not yet signed with Microsoft and Apple. Windows (“Windows protected your PC”) and macOS ask for confirmation on first launch. The <a href="https://le-belge.github.io/LithoShape3D-releases/guide/#installation-en">installation guide</a> shows what to do.</p></details><details><summary>How do I get a license? What if I lose my key?</summary><p>A test license is available through the <a href="https://le-belge.github.io/LithoShape3D-releases/beta/">beta program</a>. If you lose your key, the same page offers “Lost your key?”. The support code shown in “Help → License” helps us find your license.</p></details><details><summary>Can I sell my creations?</summary><p>The test license is for personal, non-commercial use. A commercial offer is planned: it is not open yet.</p></details></div>
+</div></section>
 
-<section id="faq">
-  <div class="wrap" style="max-width:820px">
-    <h2 class="center">Frequently asked questions</h2>
-    <p class="sub center">Another question? <a href="mailto:purenova3d@free.fr">Write to us</a>.</p>
-    <details><summary>What is a lithophane?</summary><p>A 3D-printed plate whose thickness varies with the photo: thick areas let little light through, thin areas let a lot through. Lit from behind, the photo appears.</p></details>
-    <details><summary>Are my photos sent over the internet?</summary><p>No. Calculations run on your computer and your photos never leave it. Only license activation contacts the license server (key and device identifier).</p></details>
-    <details><summary>Which files does it produce, and with which printers?</summary><p>STL files, and multicolor 3MF for the “Flat” mode. They open in common slicers (Bambu Studio, OrcaSlicer, PrusaSlicer, Cura). The software does not drive the printer: your slicer prepares the print.</p></details>
-    <details><summary>Why a warning during installation?</summary><p>The software is not yet signed with Microsoft and Apple. Windows (“Windows protected your PC”) and macOS ask for confirmation on first launch. The <a href="https://le-belge.github.io/LithoShape3D-releases/guide/#installation-en">installation guide</a> shows what to do.</p></details>
-    <details><summary>How do I get a license? What if I lose my key?</summary><p>A test license is available through the <a href="https://le-belge.github.io/LithoShape3D-releases/beta/">beta program</a>. If you lose your key, the same page offers “Lost your key?”. The support code shown in “Help → License” helps us find your license.</p></details>
-    <details><summary>Can I sell my creations?</summary><p>The test license is for personal, non-commercial use. A commercial offer is planned: it is not open yet.</p></details>
-  </div>
-</section>
-
-<div class="band">
-  <h2>Ready to see your photo light up?</h2>
-  <p class="sub" style="margin-bottom:26px">Download LithoShape3D and try it with one of your photos.</p>
-  <a class="btn" href="#telecharger">Download for free</a>
-</div>
+<div class="band"><div class="rv"><h2>Ready to see your photo light up?</h2><p class="sub" style="margin:0 auto 30px">Download LithoShape3D and try it with one of your photos.</p><a class="btn" href="#telecharger">Download for free</a></div></div>
 </main>
-
-<footer>
-  <div class="wrap row">
-    <div>© <span id="y">2026</span> LithoShape3D</div>
-    <div><a href="https://le-belge.github.io/LithoShape3D-releases/guide/">Guide</a> · <a href="https://le-belge.github.io/LithoShape3D-releases/beta/">Beta program</a> · <a href="https://github.com/le-belge/LithoShape3D-releases/releases">Releases</a> · <a href="mailto:purenova3d@free.fr">Contact</a></div>
-  </div>
-</footer>
+<footer><div class="wrap row"><div>© <span id="y">2026</span> LithoShape3D</div><div><a href="https://le-belge.github.io/LithoShape3D-releases/guide/">Guide</a> · <a href="https://le-belge.github.io/LithoShape3D-releases/beta/">Beta program</a> · <a href="https://github.com/le-belge/LithoShape3D-releases/releases">Releases</a> · <a href="mailto:purenova3d@free.fr">Contact</a></div></div></footer>
+<div class="mbar"><a class="btn" href="#telecharger">Download for free</a></div>
 <script src="../assets/js/site.js"></script>
 </body>
 </html>
