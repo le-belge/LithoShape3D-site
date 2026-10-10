@@ -70,7 +70,7 @@ TXT = {
        ("Comment obtenir une licence ? Et si je perds ma clé ?", "Une licence de test est disponible via le <a href=\"" + BETA + "\">programme bêta</a>. Si vous perdez votre clé, la même page propose « Clé perdue ? ». Le code de support affiché dans « Aide → Licence » nous aide à retrouver votre licence."),
        ("Puis-je l'utiliser pour vendre mes créations ?", "La licence de test est réservée à un usage personnel et non commercial. Une offre pour les professionnels est en préparation : <a href=\"mailto:" + MAIL + "?subject=Offre%20pro%20LithoShape3D\">écrivez-nous</a> pour être prévenu à son ouverture.")],
   band_h="Prêt à voir votre photo s'allumer ?", band_sub="Téléchargez LithoShape3D et essayez avec une de vos photos.",
-  foot_links=[("Guide", GUIDE), ("Programme bêta", BETA), ("Versions", "https://github.com/le-belge/LithoShape3D-releases/releases")], contact="Contact"),
+  foot_links=[("Guide", GUIDE), ("Programme bêta", BETA), ("Versions", "https://github.com/le-belge/LithoShape3D-releases/releases")], contact="Contact", made="Fièrement créé par <b>PureNova3D</b>, avec beaucoup de lumière et un peu trop de café."),
  "en": dict(lang="en", home="../", other="../", other_label="FR", other_hl="fr", pre="../assets/",
   title="LithoShape3D — Turn your photos into glowing 3D-printed objects",
   desc="LithoShape3D turns your photos into lithophanes, light spheres and clocks, ready to 3D print. For Windows and Mac. Everything stays on your computer.",
@@ -126,7 +126,7 @@ TXT = {
        ("How do I get a license? What if I lose my key?", "A test license is available through the <a href=\"" + BETA + "\">beta program</a>. If you lose your key, the same page offers “Lost your key?”. The support code shown in “Help → License” helps us find your license."),
        ("Can I sell my creations?", "The test license is for personal, non-commercial use. An offer for professionals is in the works: <a href=\"mailto:" + MAIL + "?subject=LithoShape3D%20pro%20offer\">write to us</a> to be notified when it opens.")],
   band_h="Ready to see your photo light up?", band_sub="Download LithoShape3D and try it with one of your photos.",
-  foot_links=[("Guide", GUIDE), ("Beta program", BETA), ("Releases", "https://github.com/le-belge/LithoShape3D-releases/releases")], contact="Contact"),
+  foot_links=[("Guide", GUIDE), ("Beta program", BETA), ("Releases", "https://github.com/le-belge/LithoShape3D-releases/releases")], contact="Contact", made="Proudly made by <b>PureNova3D</b>, with plenty of light and a bit too much coffee."),
 }
 
 OS_ICONS = {
@@ -248,7 +248,8 @@ def page(t):
 
 <div class="band"><div class="rv"><h2>{t["band_h"]}</h2><p class="sub" style="margin:0 auto 30px">{t["band_sub"]}</p><a class="btn" href="#telecharger">{t["cta1"]}</a></div></div>
 </main>
-<footer><div class="wrap row"><div>© <span id="y">2026</span> LithoShape3D</div><div>{foot}</div></div></footer>
+<footer><div class="wrap row"><div>© <span id="y">2026</span> LithoShape3D</div><div>{foot}</div></div>
+<div class="wrap made">{t["made"]}</div></footer>
 <div class="mbar"><a class="btn" href="#telecharger">{t["cta1"]}</a></div>
 <script src="{P}js/site.js?v={V}"></script>
 </body>
