@@ -167,3 +167,7 @@ footer .row > div:last-child a { display: inline-block; padding: 12px 4px; }
   .tab { padding: 12px 6px; border: 0; font-size: 14px; }
   nav.main a.lang { min-height: 44px; display: flex; align-items: center; justify-content: center; }
 }
+
+.dl .os { height: 44px; display: flex; justify-content: center; align-items: center; margin-bottom: 14px; }
+.dl .os svg { width: 44px; height: 44px; fill: none; stroke: var(--amber); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.dl .card:first-child .os svg { fill: var(--amber); stroke: none; }

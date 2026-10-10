@@ -57,7 +57,7 @@ TXT = {
   ideas=[("Un cadeau qui s'allume", "Une photo transformée en objet unique, à offrir."), ("Un souvenir de famille", "Un moment à garder, sous un autre éclairage."),
          ("Une veilleuse sur mesure", "Une lumière douce, avec une image qui compte."), ("Une horloge personnalisée", "Votre photo, avec les heures dessus.")],
   s6_eye="Télécharger", s6_h="Téléchargez LithoShape3D", s6_sub="L'aperçu est libre. Pour créer les fichiers d'impression, il faut une licence : une licence de test est disponible via le programme bêta.",
-  dl_btn="Télécharger", dl=[("🪟", "Windows", "Windows 10 / 11", "Sur la page, prenez le fichier « Setup….exe » (environ 220 Mo)."), ("", "Mac Apple Silicon", "M1, M2, M3, M4", "Sur la page, prenez le fichier « …macOS-AppleSilicon.zip » (environ 350 Mo)."), ("", "Mac Intel", "Processeurs Intel", "Sur la page, prenez le fichier « …macOS-Intel.zip » (environ 370 Mo).")],
+  dl_btn="Télécharger", dl=[("win", "Windows", "Windows 10 / 11", "Sur la page, prenez le fichier « Setup….exe » (environ 220 Mo)."), ("chip", "Mac Apple Silicon", "M1, M2, M3, M4", "Sur la page, prenez le fichier « …macOS-AppleSilicon.zip » (environ 350 Mo)."), ("mac", "Mac Intel", "Processeurs Intel", "Sur la page, prenez le fichier « …macOS-Intel.zip » (environ 370 Mo).")],
   dl_note="Le logiciel n'est pas encore signé auprès de Microsoft et d'Apple : un avertissement s'affiche au premier lancement, c'est normal. <a href=\"" + GUIDE + "#installation\">Le guide explique comment l'autoriser en une minute.</a>",
   dl_beta="Demander une licence de test",
   s7_h="Questions fréquentes", s7_sub="Une autre question ? <a href=\"mailto:" + MAIL + "\">Écrivez-nous</a>.",
@@ -112,7 +112,7 @@ TXT = {
   ideas=[("A gift that lights up", "A photo turned into a one-of-a-kind object, to give."), ("A family keepsake", "A moment to keep, under a different light."),
          ("A custom night light", "A soft light, with an image that matters."), ("A personalised clock", "Your photo, with the hours on it.")],
   s6_eye="Download", s6_h="Download LithoShape3D", s6_sub="The preview is free. To create print files you need a license: a test license is available through the beta program.",
-  dl_btn="Download", dl=[("🪟", "Windows", "Windows 10 / 11", "On the page, pick the “Setup….exe” file (about 220 MB)."), ("", "Mac Apple Silicon", "M1, M2, M3, M4", "On the page, pick the “…macOS-AppleSilicon.zip” file (about 350 MB)."), ("", "Mac Intel", "Intel processors", "On the page, pick the “…macOS-Intel.zip” file (about 370 MB).")],
+  dl_btn="Download", dl=[("win", "Windows", "Windows 10 / 11", "On the page, pick the “Setup….exe” file (about 220 MB)."), ("chip", "Mac Apple Silicon", "M1, M2, M3, M4", "On the page, pick the “…macOS-AppleSilicon.zip” file (about 350 MB)."), ("mac", "Mac Intel", "Intel processors", "On the page, pick the “…macOS-Intel.zip” file (about 370 MB).")],
   dl_note="The software is not yet signed with Microsoft and Apple: a warning appears on first launch, this is expected. <a href=\"" + GUIDE + "#installation-en\">The guide explains how to allow it in one minute.</a>",
   dl_beta="Request a test license",
   s7_h="Frequently asked questions", s7_sub="Another question? <a href=\"mailto:" + MAIL + "\">Write to us</a>.",
@@ -126,6 +126,10 @@ TXT = {
   foot_links=[("Guide", GUIDE), ("Beta program", BETA), ("Releases", "https://github.com/le-belge/LithoShape3D-releases/releases")], contact="Contact"),
 }
 
+OS_ICONS = {
+ "win": '<svg viewBox="0 0 48 48"><path d="M6 10l15-2v15H6zM24 7l18-3v19H24zM6 26h15v15L6 39zM24 26h18v19l-18-3z"/></svg>',
+ "chip": '<svg viewBox="0 0 48 48"><rect x="12" y="12" width="24" height="24" rx="4"/><rect x="19" y="19" width="10" height="10" rx="2"/><path d="M18 6v6M24 6v6M30 6v6M18 36v6M24 36v6M30 36v6M6 18h6M6 24h6M6 30h6M36 18h6M36 24h6M36 30h6"/></svg>',
+ "mac": '<svg viewBox="0 0 48 48"><rect x="7" y="9" width="34" height="23" rx="3"/><path d="M4 38h40M18 32v6M30 32v6"/></svg>'}
 ICONS = ['<svg viewBox="0 0 48 48"><rect x="6" y="9" width="36" height="30" rx="5"/><circle cx="17" cy="21" r="4"/><path d="M6 33l11-9 8 6 8-8 9 9"/></svg>',
          '<svg viewBox="0 0 48 48"><path d="M24 6c-8 0-14 6-14 14 0 5 3 8 5 11v5h18v-5c2-3 5-6 5-11 0-8-6-14-14-14z"/><path d="M19 41h10M21 45h6"/><path d="M24 15v9l5 3"/></svg>',
          '<svg viewBox="0 0 48 48"><path d="M24 6v24M14 22l10 10 10-10"/><path d="M8 38h32"/></svg>']
@@ -145,7 +149,7 @@ def page(t):
                    f'{pic_(shot, alt1, 1600, 1004)}</div><div class="prod">{pic_(prod, alt2, 960, 620)}</div></div></div>')
     steps = "".join(f'<div class="step rv d{i+1}" data-n="{i+1}">{ICONS[i]}<h3>{h}</h3><p>{p}</p></div>' for i, (h, p) in enumerate(t["steps"]))
     ideas = "".join(f'<div class="idea rv d{i%3+1}"><b>{h}</b><span>{p}</span></div>' for i, (h, p) in enumerate(t["ideas"]))
-    dl = "".join(f'<div class="card rv d{i+1}"><div class="os">{o}</div><h3>{n}</h3><p>{s}</p><a class="btn small" href="{REL}">{t["dl_btn"]}</a><small class="hint">{h}</small></div>' for i, (o, n, s, h) in enumerate(t["dl"]))
+    dl = "".join(f'<div class="card rv d{i+1}"><div class="os">{OS_ICONS[o]}</div><h3>{n}</h3><p>{s}</p><a class="btn small" href="{REL}">{t["dl_btn"]}</a><small class="hint">{h}</small></div>' for i, (o, n, s, h) in enumerate(t["dl"]))
     fq = list(t["faq"]); fq.insert(1, fq.pop(4))  # question licence en 2e position
     faq = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in fq)
     foot = " · ".join(f'<a href="{u}">{l}</a>' for l, u in t["foot_links"]) + f' · <a href="mailto:{MAIL}">{t["contact"]}</a>'
