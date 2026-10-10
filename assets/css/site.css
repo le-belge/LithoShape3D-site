@@ -182,3 +182,4 @@ footer .row > div:last-child a { display: inline-block; padding: 12px 4px; }
 #torch-msg.on { opacity: 1; }
 
 .made { margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--line); text-align: center; font-size: 14px; color: var(--muted); } .made b { color: var(--amber); font-weight: 600; }
+.bulb { opacity: .35; cursor: help; transition: opacity .3s, filter .3s; } .bulb:hover { opacity: 1; filter: drop-shadow(0 0 8px var(--amber)); }
