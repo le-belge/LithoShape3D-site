@@ -13,4 +13,4 @@ Site statique (HTML + CSS + un peu de JavaScript, aucune dépendance, aucun buil
 
 ## À compléter avant la mise en ligne publique
 - Tarifs et achat (aucun prix n'est affiché : offre commerciale non ouverte).
-- Mentions légales et Confidentialité : pages rédigées (FR/EN). À faire valider, et à compléter avec le statut / SIRET de PureNova3D s'il existe.
+- Mentions légales et Confidentialité : pages rédigées (FR/EN). SIRET 881 876 411 00029 (entrepreneur individuel) ajouté ; à faire valider par un professionnel.

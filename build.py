@@ -140,10 +140,11 @@ ICONS = ['<svg viewBox="0 0 48 48"><rect x="6" y="9" width="36" height="30" rx="
 
 UPDATED = {"fr": "10 octobre 2026", "en": "October 10, 2026"}
 EDITOR = "Michael Noel"
+SIRET = "881 876 411 00029"
 DOCS = {
  "fr": {
   "legal": ("Mentions légales", [
-   ("Éditeur du site", f"Le site LithoShape3D est édité par <b>{EDITOR}</b>, sous le nom <b>PureNova3D</b>, atelier d'impression 3D basé dans les Ardennes (France).<br>Responsable de la publication : {EDITOR}.<br>Contact : <a href=\"mailto:{MAIL}\">{MAIL}</a>."),
+   ("Éditeur du site", f"Le site LithoShape3D est édité par <b>{EDITOR}</b>, sous le nom <b>PureNova3D</b>, atelier d'impression 3D basé dans les Ardennes (France).<br>Statut : entrepreneur individuel, SIRET {SIRET}.<br>Responsable de la publication : {EDITOR}.<br>Contact : <a href=\"mailto:{MAIL}\">{MAIL}</a>."),
    ("Hébergeur", "Le site est hébergé par GitHub Pages : GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis."),
    ("Propriété intellectuelle", "Les textes, visuels, captures d'écran et le logo LithoShape3D sont la propriété de PureNova3D. Toute reproduction sans accord écrit préalable est interdite. La police Inter est distribuée sous licence SIL Open Font License."),
    ("Responsabilité", "Les informations du site sont données à titre indicatif et peuvent évoluer. Les liens vers des sites tiers (GitHub notamment) n'engagent pas la responsabilité de l'éditeur."),
@@ -157,7 +158,7 @@ DOCS = {
   "back": "← Retour au site", "foot": [("Mentions légales", "mentions-legales.html"), ("Confidentialité", "confidentialite.html")], "pages": {"legal": "mentions-legales.html", "privacy": "confidentialite.html"}},
  "en": {
   "legal": ("Legal notice", [
-   ("Publisher", f"The LithoShape3D website is published by <b>{EDITOR}</b>, trading as <b>PureNova3D</b>, a 3D printing workshop based in the Ardennes (France).<br>Publication manager: {EDITOR}.<br>Contact: <a href=\"mailto:{MAIL}\">{MAIL}</a>."),
+   ("Publisher", f"The LithoShape3D website is published by <b>{EDITOR}</b>, trading as <b>PureNova3D</b>, a 3D printing workshop based in the Ardennes (France).<br>Status: sole proprietor (entrepreneur individuel), SIRET {SIRET}.<br>Publication manager: {EDITOR}.<br>Contact: <a href=\"mailto:{MAIL}\">{MAIL}</a>."),
    ("Hosting", "The site is hosted by GitHub Pages: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA."),
    ("Intellectual property", "Texts, visuals, screenshots and the LithoShape3D logo are the property of PureNova3D. Any reproduction without prior written consent is prohibited. The Inter typeface is distributed under the SIL Open Font License."),
    ("Liability", "The information on this site is indicative and may change. Links to third-party sites (GitHub in particular) do not engage the publisher's liability."),
