@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Genere index.html (FR) et en/index.html (EN) a partir d'un seul gabarit. Usage : python3 build.py"""
-import os, re
+import os, re, hashlib
+V = hashlib.md5(b"".join(open(f, "rb").read() for f in ("assets/css/site.css", "assets/js/site.js"))).hexdigest()[:8]
 
 REL = "https://github.com/le-belge/LithoShape3D-releases/releases/latest"
 GUIDE = "https://le-belge.github.io/LithoShape3D-releases/guide/"
@@ -25,7 +26,7 @@ TXT = {
   ticks=["Aperçu allumé avant impression", "Calculs en local, pas dans le cloud", "Exports STL et 3MF"],
   off="Éteint", on="Allumé", hero_alt_off="Lithophanie éteinte : seulement du relief", hero_alt_on="La même lithophanie allumée : la photo apparaît",
   strip="Vos fichiers s'ouvrent dans les trancheurs courants", strip_chips=["Bambu Studio", "OrcaSlicer", "PrusaSlicer", "Cura"],
-  s1_eye="La magie de la lumière", s1_h="Éteinte, ce n'est qu'un relief. Allumée, c'est votre photo.",
+  s1_eye="La magie de la lumière", s1_h="Et la lumière fut… votre photo apparut.",
   s1_sub="Une lithophanie est plus ou moins épaisse selon les zones de la photo. Glissez le curseur pour voir ce que la lumière change.",
   cmp_off="Éteinte", cmp_on="Allumée", cmp_lab="Curseur éteinte / allumée",
   facts=[("1", "Épaisseur variable", "Les zones sombres de la photo sont plus épaisses, les zones claires plus minces."),
@@ -60,13 +61,14 @@ TXT = {
   dl_btn="Télécharger", dl=[("win", "Windows", "Windows 10 / 11", "Sur la page, prenez le fichier « Setup….exe » (environ 220 Mo)."), ("chip", "Mac Apple Silicon", "M1, M2, M3, M4", "Sur la page, prenez le fichier « …macOS-AppleSilicon.zip » (environ 350 Mo)."), ("mac", "Mac Intel", "Processeurs Intel", "Sur la page, prenez le fichier « …macOS-Intel.zip » (environ 370 Mo).")],
   dl_note="Le logiciel n'est pas encore signé auprès de Microsoft et d'Apple : un avertissement s'affiche au premier lancement, c'est normal. <a href=\"" + GUIDE + "#installation\">Le guide explique comment l'autoriser en une minute.</a>",
   dl_beta="Demander une licence de test",
+  pro_h="Vous vendez vos créations ?", pro_p="La licence de test est réservée à un usage personnel. Une offre pour les professionnels (vente de pièces, boutique, marché) est en préparation : <a href=\"mailto:" + MAIL + "?subject=Offre%20pro%20LithoShape3D\">écrivez-nous</a> pour être prévenu à l'ouverture.",
   s7_h="Questions fréquentes", s7_sub="Une autre question ? <a href=\"mailto:" + MAIL + "\">Écrivez-nous</a>.",
   faq=[("Qu'est-ce qu'une lithophanie ?", "C'est une plaque imprimée en 3D dont l'épaisseur varie selon la photo : les zones épaisses laissent passer peu de lumière, les zones fines en laissent passer beaucoup. Éclairée par derrière, la photo apparaît."),
        ("Mes photos sont-elles envoyées sur internet ?", "Non. Les calculs se font sur votre ordinateur et vos photos n'en sortent pas. Seule l'activation de la licence contacte le serveur de licences (clé et identifiant d'appareil)."),
        ("Quels fichiers produit-il, et avec quelles imprimantes ?", "Des fichiers STL, et des 3MF multicolores pour le mode « À plat ». Ils s'ouvrent dans les trancheurs courants (Bambu Studio, OrcaSlicer, PrusaSlicer, Cura). Le logiciel ne pilote pas l'imprimante : c'est votre trancheur qui prépare l'impression."),
        ("Pourquoi un avertissement à l'installation ?", "Le logiciel n'est pas encore signé auprès de Microsoft et d'Apple. Windows (« Windows a protégé votre ordinateur ») et macOS demandent une confirmation au premier lancement. Le <a href=\"" + GUIDE + "#installation\">guide d'installation</a> montre les gestes à faire."),
        ("Comment obtenir une licence ? Et si je perds ma clé ?", "Une licence de test est disponible via le <a href=\"" + BETA + "\">programme bêta</a>. Si vous perdez votre clé, la même page propose « Clé perdue ? ». Le code de support affiché dans « Aide → Licence » nous aide à retrouver votre licence."),
-       ("Puis-je l'utiliser pour vendre mes créations ?", "La licence de test est réservée à un usage personnel et non commercial. Une offre pour l'usage commercial est prévue : elle n'est pas encore ouverte.")],
+       ("Puis-je l'utiliser pour vendre mes créations ?", "La licence de test est réservée à un usage personnel et non commercial. Une offre pour les professionnels est en préparation : <a href=\"mailto:" + MAIL + "?subject=Offre%20pro%20LithoShape3D\">écrivez-nous</a> pour être prévenu à son ouverture.")],
   band_h="Prêt à voir votre photo s'allumer ?", band_sub="Téléchargez LithoShape3D et essayez avec une de vos photos.",
   foot_links=[("Guide", GUIDE), ("Programme bêta", BETA), ("Versions", "https://github.com/le-belge/LithoShape3D-releases/releases")], contact="Contact"),
  "en": dict(lang="en", home="../", other="../", other_label="FR", other_hl="fr", pre="../assets/",
@@ -80,7 +82,7 @@ TXT = {
   ticks=["Lit preview before printing", "Runs locally, not in the cloud", "STL and 3MF exports"],
   off="Off", on="Lit", hero_alt_off="Unlit lithophane: only relief", hero_alt_on="The same lithophane, lit: the photo appears",
   strip="Your files open in common slicers", strip_chips=["Bambu Studio", "OrcaSlicer", "PrusaSlicer", "Cura"],
-  s1_eye="The magic of light", s1_h="Off, it is just relief. Lit, it is your photo.",
+  s1_eye="The magic of light", s1_h="And there was light… and your photo appeared.",
   s1_sub="A lithophane is thicker or thinner depending on the photo. Drag the slider to see what light changes.",
   cmp_off="Off", cmp_on="Lit", cmp_lab="Off / lit slider",
   facts=[("1", "Variable thickness", "Dark areas of the photo are thicker, light areas are thinner."),
@@ -115,13 +117,14 @@ TXT = {
   dl_btn="Download", dl=[("win", "Windows", "Windows 10 / 11", "On the page, pick the “Setup….exe” file (about 220 MB)."), ("chip", "Mac Apple Silicon", "M1, M2, M3, M4", "On the page, pick the “…macOS-AppleSilicon.zip” file (about 350 MB)."), ("mac", "Mac Intel", "Intel processors", "On the page, pick the “…macOS-Intel.zip” file (about 370 MB).")],
   dl_note="The software is not yet signed with Microsoft and Apple: a warning appears on first launch, this is expected. <a href=\"" + GUIDE + "#installation-en\">The guide explains how to allow it in one minute.</a>",
   dl_beta="Request a test license",
+  pro_h="Do you sell your creations?", pro_p="The test license is for personal use only. An offer for professionals (selling parts, online shop, markets) is in the works: <a href=\"mailto:" + MAIL + "?subject=LithoShape3D%20pro%20offer\">write to us</a> to be notified when it opens.",
   s7_h="Frequently asked questions", s7_sub="Another question? <a href=\"mailto:" + MAIL + "\">Write to us</a>.",
   faq=[("What is a lithophane?", "A 3D-printed plate whose thickness varies with the photo: thick areas let little light through, thin areas let a lot through. Lit from behind, the photo appears."),
        ("Are my photos sent over the internet?", "No. Calculations run on your computer and your photos never leave it. Only license activation contacts the license server (key and device identifier)."),
        ("Which files does it produce, and with which printers?", "STL files, and multicolor 3MF for the “Flat” mode. They open in common slicers (Bambu Studio, OrcaSlicer, PrusaSlicer, Cura). The software does not drive the printer: your slicer prepares the print."),
        ("Why a warning during installation?", "The software is not yet signed with Microsoft and Apple. Windows (“Windows protected your PC”) and macOS ask for confirmation on first launch. The <a href=\"" + GUIDE + "#installation-en\">installation guide</a> shows what to do."),
        ("How do I get a license? What if I lose my key?", "A test license is available through the <a href=\"" + BETA + "\">beta program</a>. If you lose your key, the same page offers “Lost your key?”. The support code shown in “Help → License” helps us find your license."),
-       ("Can I sell my creations?", "The test license is for personal, non-commercial use. A commercial offer is planned: it is not open yet.")],
+       ("Can I sell my creations?", "The test license is for personal, non-commercial use. An offer for professionals is in the works: <a href=\"mailto:" + MAIL + "?subject=LithoShape3D%20pro%20offer\">write to us</a> to be notified when it opens.")],
   band_h="Ready to see your photo light up?", band_sub="Download LithoShape3D and try it with one of your photos.",
   foot_links=[("Guide", GUIDE), ("Beta program", BETA), ("Releases", "https://github.com/le-belge/LithoShape3D-releases/releases")], contact="Contact"),
 }
@@ -167,7 +170,7 @@ def page(t):
 <link rel="icon" href="{P}img/logo.svg" type="image/svg+xml">
 <link rel="alternate" hreflang="{t["other_hl"]}" href="{t["other"]}">
 <link rel="preload" href="{P}fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="{P}css/site.css">
+<link rel="stylesheet" href="{P}css/site.css?v={V}">
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"SoftwareApplication","name":"LithoShape3D","applicationCategory":"MultimediaApplication","operatingSystem":"Windows, macOS","description":"{t["desc"]}"}}</script>
 </head>
 <body>
@@ -235,6 +238,7 @@ def page(t):
   <div class="dl">{dl}</div>
   <p class="rv" style="color:var(--muted);font-size:15px;margin:30px auto 0;max-width:680px">{t["dl_note"]}</p>
   <p class="rv" style="margin-top:22px"><a class="btn ghost" href="{BETA}">{t["dl_beta"]}</a></p>
+  <div class="pro rv"><b>{t["pro_h"]}</b><span>{t["pro_p"]}</span></div>
 </div></section>
 
 <section id="faq"><div class="wrap" style="max-width:840px">
@@ -246,7 +250,7 @@ def page(t):
 </main>
 <footer><div class="wrap row"><div>© <span id="y">2026</span> LithoShape3D</div><div>{foot}</div></div></footer>
 <div class="mbar"><a class="btn" href="#telecharger">{t["cta1"]}</a></div>
-<script src="{P}js/site.js"></script>
+<script src="{P}js/site.js?v={V}"></script>
 </body>
 </html>
 '''

@@ -32,5 +32,23 @@
   var burger = $('.burger'), nav = $('nav.main');
   if (burger) burger.addEventListener('click', function () { var o = nav.classList.toggle('open'); burger.setAttribute('aria-expanded', String(o)); });
   $$('nav.main a').forEach(function (a) { a.addEventListener('click', function () { nav.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); }); });
+
+  // easter egg : code Konami (ou 5 clics sur le logo) = mode lampe torche
+  var torch = document.createElement('div'), tmsg = document.createElement('div'), lang = document.documentElement.lang === 'fr';
+  torch.id = 'torch'; tmsg.id = 'torch-msg'; document.body.appendChild(torch); document.body.appendChild(tmsg);
+  function say(t) { tmsg.textContent = t; tmsg.classList.add('on'); setTimeout(function () { tmsg.classList.remove('on'); }, 3200); }
+  function moveTorch(x, y) { torch.style.setProperty('--x', x + 'px'); torch.style.setProperty('--y', y + 'px'); }
+  window.addEventListener('mousemove', function (e) { moveTorch(e.clientX, e.clientY); }, { passive: true });
+  window.addEventListener('touchmove', function (e) { var t = e.touches[0]; moveTorch(t.clientX, t.clientY); }, { passive: true });
+  function toggleTorch() { var on = torch.classList.toggle('on'); moveTorch(innerWidth / 2, innerHeight / 2); say(on ? (lang ? 'Plus de courant ! Éclairez avec la souris. (Échap pour rallumer)' : 'Power cut! Light it up with your mouse. (Esc to restore)') : (lang ? 'Et la lumière fut.' : 'And there was light.')); }
+  var code = 'ArrowUp,ArrowUp,ArrowDown,ArrowDown,ArrowLeft,ArrowRight,ArrowLeft,ArrowRight,b,a'.split(','), pos = 0;
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && torch.classList.contains('on')) { toggleTorch(); return; }
+    pos = e.key.toLowerCase() === code[pos].toLowerCase() ? pos + 1 : (e.key === code[0] ? 1 : 0);
+    if (pos === code.length) { pos = 0; toggleTorch(); }
+  });
+  var clicks = 0, clickT, brand = $('.brand');
+  if (brand) brand.addEventListener('click', function () { clearTimeout(clickT); clicks++; clickT = setTimeout(function () { clicks = 0; }, 900); if (clicks >= 5) { clicks = 0; toggleTorch(); } });
+  if (window.console) console.log(lang ? '💡 Psst… essayez le code Konami.' : '💡 Psst… try the Konami code.');
   var y = $('#y'); if (y) y.textContent = new Date().getFullYear();
 })();
