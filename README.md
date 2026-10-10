@@ -13,5 +13,4 @@ Site statique (HTML + CSS + un peu de JavaScript, aucune dépendance, aucun buil
 
 ## À compléter avant la mise en ligne publique
 - Tarifs et achat (aucun prix n'est affiché : offre commerciale non ouverte).
-- Lien « Confidentialité » vers la page du portail une fois l'adresse du serveur de licences stable.
-- Mentions légales (éditeur, hébergeur, contact) : à valider avec ton comptable ou un professionnel.
+- Mentions légales et Confidentialité : pages rédigées (FR/EN). À faire valider, et à compléter avec le statut / SIRET de PureNova3D s'il existe.

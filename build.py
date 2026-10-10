@@ -137,6 +137,62 @@ ICONS = ['<svg viewBox="0 0 48 48"><rect x="6" y="9" width="36" height="30" rx="
          '<svg viewBox="0 0 48 48"><path d="M24 6c-8 0-14 6-14 14 0 5 3 8 5 11v5h18v-5c2-3 5-6 5-11 0-8-6-14-14-14z"/><path d="M19 41h10M21 45h6"/><path d="M24 15v9l5 3"/></svg>',
          '<svg viewBox="0 0 48 48"><path d="M24 6v24M14 22l10 10 10-10"/><path d="M8 38h32"/></svg>']
 
+
+UPDATED = {"fr": "10 octobre 2026", "en": "October 10, 2026"}
+EDITOR = "Michael Noel"
+DOCS = {
+ "fr": {
+  "legal": ("Mentions légales", [
+   ("Éditeur du site", f"Le site LithoShape3D est édité par <b>{EDITOR}</b>, sous le nom <b>PureNova3D</b>, atelier d'impression 3D basé dans les Ardennes (France).<br>Responsable de la publication : {EDITOR}.<br>Contact : <a href=\"mailto:{MAIL}\">{MAIL}</a>."),
+   ("Hébergeur", "Le site est hébergé par GitHub Pages : GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis."),
+   ("Propriété intellectuelle", "Les textes, visuels, captures d'écran et le logo LithoShape3D sont la propriété de PureNova3D. Toute reproduction sans accord écrit préalable est interdite. La police Inter est distribuée sous licence SIL Open Font License."),
+   ("Responsabilité", "Les informations du site sont données à titre indicatif et peuvent évoluer. Les liens vers des sites tiers (GitHub notamment) n'engagent pas la responsabilité de l'éditeur."),
+   ("Données personnelles", "Voir la page <a href=\"confidentialite.html\">Confidentialité</a>.")]),
+  "privacy": ("Confidentialité", [
+   ("Ce site ne vous suit pas", "Il n'utilise aucun cookie, aucun traceur, aucun outil de statistiques ni aucune police ou ressource chargée depuis un service tiers. Il ne contient aucun formulaire."),
+   ("Journaux de l'hébergeur", "Le site est hébergé par GitHub Pages. Comme tout hébergeur, GitHub peut enregistrer des données techniques de connexion (adresse IP, navigateur) dans ses journaux. Nous n'y avons pas accès. Voir la <a href=\"https://docs.github.com/fr/site-policy/privacy-policies/github-general-privacy-statement\">politique de confidentialité de GitHub</a>."),
+   ("Nous écrire", f"Si vous nous écrivez à <a href=\"mailto:{MAIL}\">{MAIL}</a>, nous utilisons votre adresse uniquement pour vous répondre et la conservons le temps de l'échange. Vous pouvez demander l'accès, la rectification ou l'effacement de vos données en nous écrivant à la même adresse. Vous pouvez aussi introduire une réclamation auprès de la CNIL."),
+   ("Le logiciel LithoShape3D", "Les calculs se font sur votre ordinateur : vos photos ne sont jamais envoyées sur internet. Seule l'activation de la licence contacte le serveur de licences (clé de licence et identifiant d'appareil)."),
+   ("Mise à jour", "Dernière mise à jour : " + UPDATED["fr"] + ".")]),
+  "back": "← Retour au site", "foot": [("Mentions légales", "mentions-legales.html"), ("Confidentialité", "confidentialite.html")], "pages": {"legal": "mentions-legales.html", "privacy": "confidentialite.html"}},
+ "en": {
+  "legal": ("Legal notice", [
+   ("Publisher", f"The LithoShape3D website is published by <b>{EDITOR}</b>, trading as <b>PureNova3D</b>, a 3D printing workshop based in the Ardennes (France).<br>Publication manager: {EDITOR}.<br>Contact: <a href=\"mailto:{MAIL}\">{MAIL}</a>."),
+   ("Hosting", "The site is hosted by GitHub Pages: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA."),
+   ("Intellectual property", "Texts, visuals, screenshots and the LithoShape3D logo are the property of PureNova3D. Any reproduction without prior written consent is prohibited. The Inter typeface is distributed under the SIL Open Font License."),
+   ("Liability", "The information on this site is indicative and may change. Links to third-party sites (GitHub in particular) do not engage the publisher's liability."),
+   ("Personal data", "See the <a href=\"privacy.html\">Privacy</a> page.")]),
+  "privacy": ("Privacy", [
+   ("This site does not track you", "It uses no cookies, no trackers, no analytics, and no fonts or resources loaded from a third-party service. It contains no forms."),
+   ("Host logs", "The site is hosted by GitHub Pages. Like any host, GitHub may record technical connection data (IP address, browser) in its logs. We have no access to them. See <a href=\"https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement\">GitHub's privacy statement</a>."),
+   ("Writing to us", f"If you write to <a href=\"mailto:{MAIL}\">{MAIL}</a>, we use your address only to reply and keep it for the duration of the exchange. You can request access, correction or deletion of your data by writing to the same address. You may also lodge a complaint with the CNIL (French data protection authority)."),
+   ("The LithoShape3D software", "Calculations run on your computer: your photos are never sent over the internet. Only license activation contacts the license server (license key and device identifier)."),
+   ("Last updated", "Last updated: " + UPDATED["en"] + ".")]),
+  "back": "← Back to site", "foot": [("Legal notice", "legal.html"), ("Privacy", "privacy.html")], "pages": {"legal": "legal.html", "privacy": "privacy.html"}},
+}
+
+def doc_page(lang, kind):
+    t = TXT[lang]; d = DOCS[lang]; P = t["pre"]; title, secs = d[kind]
+    body = "".join(f"<h2>{h}</h2><p>{p}</p>" for h, p in secs)
+    return f'''<!doctype html>
+<html lang="{lang}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{title} — LithoShape3D</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b0e14">
+<link rel="icon" href="{P}img/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="{P}css/site.css?v={V}">
+</head>
+<body>
+<header class="top"><div class="wrap bar"><a class="brand" href="{t["home"]}"><img src="{P}img/logo.svg" alt="" width="32" height="32"><b>Litho<span>Shape3D</span></b></a><nav class="main docnav"><a href="{t["home"]}">{d["back"]}</a></nav></div></header>
+<main id="main" class="doc wrap"><h1>{title}</h1>{body}</main>
+<footer><div class="wrap row"><div>© {2026} LithoShape3D</div><div>{" · ".join(f'<a href="{u}">{l}</a>' for l, u in d["foot"])}</div></div></footer>
+</body>
+</html>
+'''
+
 def page(t):
     P = t["pre"]; pic_ = lambda n, alt, w, h, cls="", lazy=True: pic(n, alt, w, h, cls, lazy, P + "img/")
     nav = "".join(f'<a href="#{a}">{l}</a>' for a, l in zip(["apercu", "modules", "comment", "atouts", "faq"], t["nav"]))
@@ -155,7 +211,7 @@ def page(t):
     dl = "".join(f'<div class="card rv d{i+1}"><div class="os">{OS_ICONS[o]}</div><h3>{n}</h3><p>{s}</p><a class="btn small" href="{REL}">{t["dl_btn"]}</a><small class="hint">{h}</small></div>' for i, (o, n, s, h) in enumerate(t["dl"]))
     fq = list(t["faq"]); fq.insert(1, fq.pop(4))  # question licence en 2e position
     faq = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in fq)
-    foot = " · ".join(f'<a href="{u}">{l}</a>' for l, u in t["foot_links"]) + f' · <a href="mailto:{MAIL}">{t["contact"]}</a>'
+    foot = " · ".join(f'<a href="{u}">{l}</a>' for l, u in t["foot_links"]) + f' · <a href="mailto:{MAIL}">{t["contact"]}</a>' + "".join(f' · <a href="{u}">{l}</a>' for l, u in DOCS[t["lang"]]["foot"])
     b = lambda key, ic, cls: f'<div class="bx {cls} rv"><div class="ic">{ic}</div><h4>{t[key][0]}</h4><p>{t[key][1]}</p></div>'
     html = f'''<!doctype html>
 <!-- {t["comment"]} -->
@@ -261,4 +317,7 @@ def page(t):
 os.makedirs("en", exist_ok=True)
 open("index.html", "w", encoding="utf-8").write(page(TXT["fr"]))
 open("en/index.html", "w", encoding="utf-8").write(page(TXT["en"]))
+for _l, _d in (("fr", ""), ("en", "en/")):
+    for _k in ("legal", "privacy"):
+        open(_d + DOCS[_l]["pages"][_k], "w", encoding="utf-8").write(doc_page(_l, _k))
 print("pages generees :", os.path.getsize("index.html"), "et", os.path.getsize("en/index.html"), "octets")
