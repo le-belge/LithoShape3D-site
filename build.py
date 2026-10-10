@@ -21,8 +21,8 @@ TXT = {
   nav=["Aperçu allumé", "Créations", "Comment ça marche", "Atouts", "FAQ"], nav_cta="Télécharger", menu="Menu",
   kicker="Pour Windows et Mac", h1="Vos photos, en <em>objets lumineux</em>.",
   lead="LithoShape3D transforme une photo en lithophanie, en sphère ou en horloge, prête à imprimer en 3D. Vous voyez le rendu <strong>allumé</strong> avant même de lancer l'impression.",
-  cta1="Télécharger gratuitement", cta2="Voir le mode d'emploi",
-  ticks=["Aperçu libre", "Vos photos restent chez vous", "Fichiers STL et 3MF"],
+  cta1="Télécharger l'aperçu gratuit", cta2="Demander une licence de test",
+  ticks=["Aperçu allumé avant impression", "Calculs en local, pas dans le cloud", "Exports STL et 3MF"],
   off="Éteint", on="Allumé", hero_alt_off="Lithophanie éteinte : seulement du relief", hero_alt_on="La même lithophanie allumée : la photo apparaît",
   strip="Vos fichiers s'ouvrent dans les trancheurs courants", strip_chips=["Bambu Studio", "OrcaSlicer", "PrusaSlicer", "Cura"],
   s1_eye="La magie de la lumière", s1_h="Éteinte, ce n'est qu'un relief. Allumée, c'est votre photo.",
@@ -57,7 +57,7 @@ TXT = {
   ideas=[("Un cadeau qui s'allume", "Une photo transformée en objet unique, à offrir."), ("Un souvenir de famille", "Un moment à garder, sous un autre éclairage."),
          ("Une veilleuse sur mesure", "Une lumière douce, avec une image qui compte."), ("Une horloge personnalisée", "Votre photo, avec les heures dessus.")],
   s6_eye="Télécharger", s6_h="Téléchargez LithoShape3D", s6_sub="L'aperçu est libre. Pour créer les fichiers d'impression, il faut une licence : une licence de test est disponible via le programme bêta.",
-  dl_btn="Télécharger", dl=[("🪟", "Windows", "Windows 10 / 11"), ("", "Mac Apple Silicon", "M1, M2, M3, M4"), ("", "Mac Intel", "Processeurs Intel")],
+  dl_btn="Télécharger", dl=[("🪟", "Windows", "Windows 10 / 11", "Sur la page, prenez le fichier « Setup….exe » (environ 220 Mo)."), ("", "Mac Apple Silicon", "M1, M2, M3, M4", "Sur la page, prenez le fichier « …macOS-AppleSilicon.zip » (environ 350 Mo)."), ("", "Mac Intel", "Processeurs Intel", "Sur la page, prenez le fichier « …macOS-Intel.zip » (environ 370 Mo).")],
   dl_note="Le logiciel n'est pas encore signé auprès de Microsoft et d'Apple : un avertissement s'affiche au premier lancement, c'est normal. <a href=\"" + GUIDE + "#installation\">Le guide explique comment l'autoriser en une minute.</a>",
   dl_beta="Demander une licence de test",
   s7_h="Questions fréquentes", s7_sub="Une autre question ? <a href=\"mailto:" + MAIL + "\">Écrivez-nous</a>.",
@@ -76,8 +76,8 @@ TXT = {
   nav=["Lit preview", "Creations", "How it works", "Features", "FAQ"], nav_cta="Download", menu="Menu",
   kicker="For Windows and Mac", h1="Your photos, as <em>glowing objects</em>.",
   lead="LithoShape3D turns a photo into a lithophane, a sphere or a clock, ready to 3D print. You see the <strong>lit</strong> result before you even start printing.",
-  cta1="Download for free", cta2="Read the user guide",
-  ticks=["Free preview", "Your photos stay with you", "STL and 3MF files"],
+  cta1="Download the free preview", cta2="Request a test license",
+  ticks=["Lit preview before printing", "Runs locally, not in the cloud", "STL and 3MF exports"],
   off="Off", on="Lit", hero_alt_off="Unlit lithophane: only relief", hero_alt_on="The same lithophane, lit: the photo appears",
   strip="Your files open in common slicers", strip_chips=["Bambu Studio", "OrcaSlicer", "PrusaSlicer", "Cura"],
   s1_eye="The magic of light", s1_h="Off, it is just relief. Lit, it is your photo.",
@@ -112,7 +112,7 @@ TXT = {
   ideas=[("A gift that lights up", "A photo turned into a one-of-a-kind object, to give."), ("A family keepsake", "A moment to keep, under a different light."),
          ("A custom night light", "A soft light, with an image that matters."), ("A personalised clock", "Your photo, with the hours on it.")],
   s6_eye="Download", s6_h="Download LithoShape3D", s6_sub="The preview is free. To create print files you need a license: a test license is available through the beta program.",
-  dl_btn="Download", dl=[("🪟", "Windows", "Windows 10 / 11"), ("", "Mac Apple Silicon", "M1, M2, M3, M4"), ("", "Mac Intel", "Intel processors")],
+  dl_btn="Download", dl=[("🪟", "Windows", "Windows 10 / 11", "On the page, pick the “Setup….exe” file (about 220 MB)."), ("", "Mac Apple Silicon", "M1, M2, M3, M4", "On the page, pick the “…macOS-AppleSilicon.zip” file (about 350 MB)."), ("", "Mac Intel", "Intel processors", "On the page, pick the “…macOS-Intel.zip” file (about 370 MB).")],
   dl_note="The software is not yet signed with Microsoft and Apple: a warning appears on first launch, this is expected. <a href=\"" + GUIDE + "#installation-en\">The guide explains how to allow it in one minute.</a>",
   dl_beta="Request a test license",
   s7_h="Frequently asked questions", s7_sub="Another question? <a href=\"mailto:" + MAIL + "\">Write to us</a>.",
@@ -145,8 +145,9 @@ def page(t):
                    f'{pic_(shot, alt1, 1600, 1004)}</div><div class="prod">{pic_(prod, alt2, 960, 620)}</div></div></div>')
     steps = "".join(f'<div class="step rv d{i+1}" data-n="{i+1}">{ICONS[i]}<h3>{h}</h3><p>{p}</p></div>' for i, (h, p) in enumerate(t["steps"]))
     ideas = "".join(f'<div class="idea rv d{i%3+1}"><b>{h}</b><span>{p}</span></div>' for i, (h, p) in enumerate(t["ideas"]))
-    dl = "".join(f'<div class="card rv d{i+1}"><div class="os">{o}</div><h3>{n}</h3><p>{s}</p><a class="btn small" href="{REL}">{t["dl_btn"]}</a></div>' for i, (o, n, s) in enumerate(t["dl"]))
-    faq = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in t["faq"])
+    dl = "".join(f'<div class="card rv d{i+1}"><div class="os">{o}</div><h3>{n}</h3><p>{s}</p><a class="btn small" href="{REL}">{t["dl_btn"]}</a><small class="hint">{h}</small></div>' for i, (o, n, s, h) in enumerate(t["dl"]))
+    fq = list(t["faq"]); fq.insert(1, fq.pop(4))  # question licence en 2e position
+    faq = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in fq)
     foot = " · ".join(f'<a href="{u}">{l}</a>' for l, u in t["foot_links"]) + f' · <a href="mailto:{MAIL}">{t["contact"]}</a>'
     b = lambda key, ic, cls: f'<div class="bx {cls} rv"><div class="ic">{ic}</div><h4>{t[key][0]}</h4><p>{t[key][1]}</p></div>'
     html = f'''<!doctype html>
@@ -161,7 +162,7 @@ def page(t):
 <meta property="og:image" content="{P}img/og.jpg"><meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="{P}img/logo.svg" type="image/svg+xml">
 <link rel="alternate" hreflang="{t["other_hl"]}" href="{t["other"]}">
-<link rel="preload" href="{P}fonts/Inter-Variable.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="{P}fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{P}css/site.css">
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"SoftwareApplication","name":"LithoShape3D","applicationCategory":"MultimediaApplication","operatingSystem":"Windows, macOS","description":"{t["desc"]}"}}</script>
 </head>
@@ -178,7 +179,7 @@ def page(t):
     <div class="kicker">{t["kicker"]}</div>
     <h1>{t["h1"]}</h1>
     <p class="lead">{t["lead"]}</p>
-    <div class="cta"><a class="btn" href="#telecharger">{t["cta1"]}</a><a class="btn ghost" href="{GUIDE}">{t["cta2"]}</a></div>
+    <div class="cta"><a class="btn" href="#telecharger">{t["cta1"]}</a><a class="btn ghost" href="{BETA}">{t["cta2"]}</a></div>
     <ul class="ticks">{ticks}</ul>
   </div>
   <div class="stage"><div class="halo"></div>
