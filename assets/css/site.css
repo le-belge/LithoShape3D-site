@@ -187,3 +187,4 @@ footer .row > div:last-child a { display: inline-block; padding: 12px 4px; }
 .doc { max-width: 760px; padding-top: 56px; padding-bottom: 72px; } .doc h1 { font-size: clamp(32px, 5vw, 44px); margin: 0 0 28px; } .doc h2 { font-size: 20px; margin: 32px 0 6px; color: var(--amber); } .doc p { color: var(--soft); margin: 0; }
 nav.main.docnav { display: flex !important; position: static !important; flex-direction: row; padding: 0 !important; border: 0 !important; background: none !important; margin-left: auto; } nav.main.docnav a { border: 0 !important; padding: 10px 8px !important; }
 .made a { color: inherit; } .made a b { border-bottom: 1px dotted var(--amber); } .made a:hover b { color: #ffd9a8; }
+footer a.fb svg { width: 15px; height: 15px; fill: currentColor; vertical-align: -2px; margin-right: 5px; }

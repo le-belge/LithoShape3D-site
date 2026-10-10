@@ -7,6 +7,7 @@ REL = "https://github.com/le-belge/LithoShape3D-releases/releases/latest"
 GUIDE = "https://le-belge.github.io/LithoShape3D-releases/guide/"
 BETA = "https://le-belge.github.io/LithoShape3D-releases/beta/"
 MAIL = "purenova3d@free.fr"
+FB = "https://www.facebook.com/PureNova3D/"
 
 def pic(name, alt, w, h, cls="", lazy=True, pre="assets/img/"):
     l = ' loading="lazy" decoding="async"' if lazy else ' fetchpriority="high"'
@@ -212,7 +213,7 @@ def page(t):
     dl = "".join(f'<div class="card rv d{i+1}"><div class="os">{OS_ICONS[o]}</div><h3>{n}</h3><p>{s}</p><a class="btn small" href="{REL}">{t["dl_btn"]}</a><small class="hint">{h}</small></div>' for i, (o, n, s, h) in enumerate(t["dl"]))
     fq = list(t["faq"]); fq.insert(1, fq.pop(4))  # question licence en 2e position
     faq = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in fq)
-    foot = " · ".join(f'<a href="{u}">{l}</a>' for l, u in t["foot_links"]) + f' · <a href="mailto:{MAIL}">{t["contact"]}</a>' + "".join(f' · <a href="{u}">{l}</a>' for l, u in DOCS[t["lang"]]["foot"])
+    foot = " · ".join(f'<a href="{u}">{l}</a>' for l, u in t["foot_links"]) + f' · <a href="mailto:{MAIL}">{t["contact"]}</a>' + f' · <a class="fb" href="{FB}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.8c0-.9.3-1.5 1.6-1.5h1.7V3.4c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.4H7.3V13H10v8z"/></svg>Facebook</a>' + "".join(f' · <a href="{u}">{l}</a>' for l, u in DOCS[t["lang"]]["foot"])
     b = lambda key, ic, cls: f'<div class="bx {cls} rv"><div class="ic">{ic}</div><h4>{t[key][0]}</h4><p>{t[key][1]}</p></div>'
     html = f'''<!doctype html>
 <!-- {t["comment"]} -->
