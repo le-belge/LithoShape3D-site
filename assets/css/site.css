@@ -188,3 +188,15 @@ footer .row > div:last-child a { display: inline-block; padding: 12px 4px; }
 nav.main.docnav { display: flex !important; position: static !important; flex-direction: row; padding: 0 !important; border: 0 !important; background: none !important; margin-left: auto; } nav.main.docnav a { border: 0 !important; padding: 10px 8px !important; }
 .made a { color: inherit; } .made a b { border-bottom: 1px dotted var(--amber); } .made a:hover b { color: #ffd9a8; }
 footer a.fb svg { width: 15px; height: 15px; fill: currentColor; vertical-align: -2px; margin-right: 5px; }
+
+/* nouveautes */
+.news { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; }
+.news .col { padding: 28px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); }
+.news .col.soon { border-color: var(--line2); background: linear-gradient(180deg, var(--card2), var(--card)); }
+.news h3 { margin: 0 0 14px; font-size: 20px; letter-spacing: -.01em; }
+.news .col.soon h3 { color: var(--amber); }
+.news ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+.news li { position: relative; padding-left: 22px; color: var(--soft); font-size: 15.5px; }
+.news li::before { content: ""; position: absolute; left: 0; top: .62em; width: 8px; height: 8px; border-radius: 50%; background: var(--teal); }
+.news .col.soon li::before { background: var(--amber2); }
+@media (max-width: 900px) { .news { grid-template-columns: 1fr; } }

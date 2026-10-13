@@ -20,7 +20,7 @@ TXT = {
   title="LithoShape3D — Transformez vos photos en objets lumineux imprimés en 3D",
   desc="LithoShape3D crée des lithophanies, des sphères lumineuses et des horloges à partir de vos photos, prêtes à imprimer en 3D. Pour Windows et Mac. Tout reste sur votre ordinateur.",
   og="LithoShape3D — vos photos en objets lumineux", skip="Aller au contenu",
-  nav=["Aperçu allumé", "Créations", "Comment ça marche", "Atouts", "FAQ"], nav_cta="Télécharger", menu="Menu",
+  nav=["Aperçu allumé", "Créations", "Comment ça marche", "Atouts", "Nouveautés", "FAQ"], nav_cta="Télécharger", menu="Menu",
   kicker="Pour Windows et Mac", h1="Vos photos, en <em>objets lumineux</em>.",
   lead="LithoShape3D transforme une photo en lithophanie, en sphère ou en horloge, prête à imprimer en 3D. Vous voyez le rendu <strong>allumé</strong> avant même de lancer l'impression.",
   cta1="Télécharger l'aperçu gratuit", cta2="Demander une licence de test",
@@ -36,7 +36,7 @@ TXT = {
   s2_eye="Créations", s2_h="Trois créations, un seul logiciel", s2_sub="Chargez une photo, choisissez la forme, ajustez : le logiciel s'occupe de la géométrie.",
   tabs=[
    ("litho", "Lithophanie", "Le panneau lumineux classique", "Une photo sur un panneau plat ou courbe, avec un support d'éclairage si vous le souhaitez.",
-    ["Plate, arc doux, arc standard, arc large ou demi-cylindre", "Cadrage, zoom et rotation de l'image", "Support d'éclairage imprimable (Bambu Lab Lamp Kit 001)"], "app-lithophanie", "lithophanie",
+    ["Plate, arc doux, arc standard, arc large, demi-cylindre ou abat-jour", "Cadre autour de la photo, cadrage, zoom et rotation de l'image", "Support d'éclairage imprimable (Bambu Lab Lamp Kit 001 ou IKEA KAPPLAKE)"], "app-lithophanie", "lithophanie",
     "Capture du logiciel : lithophanie et aperçu 3D", "Lithophanie lumineuse"),
    ("sphere", "LithoSphere", "Une sphère qui s'allume", "Une ou plusieurs photos sur une sphère lumineuse, avec chapeau, rehausse et socle.",
     ["Placement automatique de plusieurs photos", "Chapeaux, rehausse et socle à imprimer", "Aperçu allumé et vue éclatée pour l'assemblage"], "app-lithosphere", "lithosphere",
@@ -55,6 +55,17 @@ TXT = {
   b4=("Chez vous, pas dans le cloud", "Les calculs se font sur votre ordinateur : vos photos ne sont jamais envoyées sur internet."),
   b5=("Windows et Mac", "Windows 10/11, macOS Apple Silicon et Intel. Interface en français et en anglais."),
   b6=("Un guide pas à pas", "Installation et mode d'emploi en ligne, toujours à jour."),
+  nw_eye="Nouveautés", nw_h="Ce qui est là, et ce qui arrive", nw_sub="Le logiciel évolue avec les retours de ses testeurs.",
+  nw_now_h="Déjà disponible", nw_soon_h="Bientôt : version 1.1.2 (en test)",
+  nw_now=["Abat-jour, y compris suspendu pour une douille de plafond", "Support d'éclairage imprimable pour le Bambu Lab Lamp Kit 001 et l'IKEA KAPPLAKE",
+          "Cadre autour de la photo", "Vérificateur de photo : il signale une image floue, trop sombre, trop claire ou trop petite",
+          "Aperçu allumé plus lumineux, avec la couleur de lumière au choix (chaude, neutre, froide)"],
+  nw_soon=["Réglage de l'image : luminosité, contraste, tons, netteté du relief, ajustement automatique et rognage de la photo",
+           "Abat-jour : plusieurs photos jointives à transition douce (sans décor de comblement), bordure haut et bas en cadre ou en bourrelet, aperçu suspendu à l'endroit",
+           "Fichiers STL jusqu'à deux fois plus légers, et finesse jusqu'à 0,1 mm par pixel",
+           "Support KAPPLAKE avec passage du câble", "Refaire un support à la bonne taille : « Support seul » et « Mesurer un STL » à partir d'un fichier déjà imprimé",
+           "Vous choisissez le nom de vos fichiers, et rien n'est écrasé sans confirmation"],
+  nw_note="Les nouveautés « bientôt » sont en test : aucune date de sortie n'est fixée.",
   s5_eye="Idées", s5_h="Ce que vous pouvez créer",
   ideas=[("Un cadeau qui s'allume", "Une photo transformée en objet unique, à offrir."), ("Un souvenir de famille", "Un moment à garder, sous un autre éclairage."),
          ("Une veilleuse sur mesure", "Une lumière douce, avec une image qui compte."), ("Une horloge personnalisée", "Votre photo, avec les heures dessus.")],
@@ -76,7 +87,7 @@ TXT = {
   title="LithoShape3D — Turn your photos into glowing 3D-printed objects",
   desc="LithoShape3D turns your photos into lithophanes, light spheres and clocks, ready to 3D print. For Windows and Mac. Everything stays on your computer.",
   og="LithoShape3D — your photos as glowing objects", skip="Skip to content",
-  nav=["Lit preview", "Creations", "How it works", "Features", "FAQ"], nav_cta="Download", menu="Menu",
+  nav=["Lit preview", "Creations", "How it works", "Features", "What's new", "FAQ"], nav_cta="Download", menu="Menu",
   kicker="For Windows and Mac", h1="Your photos, as <em>glowing objects</em>.",
   lead="LithoShape3D turns a photo into a lithophane, a sphere or a clock, ready to 3D print. You see the <strong>lit</strong> result before you even start printing.",
   cta1="Download the free preview", cta2="Request a test license",
@@ -92,7 +103,7 @@ TXT = {
   s2_eye="Creations", s2_h="Three creations, one software", s2_sub="Load a photo, pick a shape, adjust: the software handles the geometry.",
   tabs=[
    ("litho", "Lithophane", "The classic glowing panel", "A photo on a flat or curved panel, with a lighting stand if you wish.",
-    ["Flat, soft arc, standard arc, wide arc or half-cylinder", "Crop, zoom and rotate the image", "Printable lighting stand (Bambu Lab Lamp Kit 001)"], "app-lithophanie", "lithophanie",
+    ["Flat, soft arc, standard arc, wide arc, half-cylinder or lampshade", "Frame around the photo, crop, zoom and rotate the image", "Printable lighting stand (Bambu Lab Lamp Kit 001 or IKEA KAPPLAKE)"], "app-lithophanie", "lithophanie",
     "Software screenshot: lithophane and 3D preview", "Glowing lithophane"),
    ("sphere", "LithoSphere", "A sphere that lights up", "One or several photos on a glowing sphere, with cap, riser and base.",
     ["Automatic placement of several photos", "Caps, riser and base to print", "Lit preview and exploded view for assembly"], "app-lithosphere", "lithosphere",
@@ -111,6 +122,17 @@ TXT = {
   b4=("On your computer, not in the cloud", "Calculations run on your computer: your photos are never sent over the internet."),
   b5=("Windows and Mac", "Windows 10/11, macOS Apple Silicon and Intel. Interface in French and English."),
   b6=("A step-by-step guide", "Online installation and user guide, always up to date."),
+  nw_eye="What's new", nw_h="What's here, and what's coming", nw_sub="The software evolves with feedback from its testers.",
+  nw_now_h="Available now", nw_soon_h="Coming soon: version 1.1.2 (in testing)",
+  nw_now=["Lampshade, including a hanging version for a ceiling socket", "Printable lighting stand for the Bambu Lab Lamp Kit 001 and the IKEA KAPPLAKE",
+          "Frame around the photo", "Photo checker: it flags a blurry, too dark, too bright or too small image",
+          "Brighter lit preview, with a choice of light colour (warm, neutral, cool)"],
+  nw_soon=["Image adjustment: brightness, contrast, tones, relief sharpness, automatic adjustment and photo cropping",
+           "Lampshade: several photos joined with a soft transition (no filler pattern), top and bottom border as a frame or a bead, hung preview shown the right way up",
+           "STL files up to twice as light, and detail down to 0.1 mm per pixel",
+           "KAPPLAKE stand with a cable channel", "Rebuild a stand at the right size: “Stand only” and “Measure an STL” from an already printed file",
+           "You choose your file names, and nothing is overwritten without confirmation"],
+  nw_note="The “coming soon” items are in testing: no release date is set.",
   s5_eye="Ideas", s5_h="What you can create",
   ideas=[("A gift that lights up", "A photo turned into a one-of-a-kind object, to give."), ("A family keepsake", "A moment to keep, under a different light."),
          ("A custom night light", "A soft light, with an image that matters."), ("A personalised clock", "Your photo, with the hours on it.")],
@@ -197,7 +219,7 @@ def doc_page(lang, kind):
 
 def page(t):
     P = t["pre"]; pic_ = lambda n, alt, w, h, cls="", lazy=True: pic(n, alt, w, h, cls, lazy, P + "img/")
-    nav = "".join(f'<a href="#{a}">{l}</a>' for a, l in zip(["apercu", "modules", "comment", "atouts", "faq"], t["nav"]))
+    nav = "".join(f'<a href="#{a}">{l}</a>' for a, l in zip(["apercu", "modules", "comment", "atouts", "nouveautes", "faq"], t["nav"]))
     ticks = "".join(f"<li>{x}</li>" for x in t["ticks"])
     chips = "".join(f'<span class="chip">{c}</span>' for c in t["strip_chips"])
     facts = "".join(f'<li><i>{n}</i><div><b>{h}</b><p>{p}</p></div></li>' for n, h, p in t["facts"])
@@ -285,6 +307,13 @@ def page(t):
     <div class="bx b-lg rv"><div class="ic">◐</div><h4>{t["b1"][0]}</h4><p>{t["b1"][1]}</p>{pic_("app-lithophanie", t["b1_alt"], 1600, 1004)}</div>
     {b("b2", "▦", "b-md")}{b("b3", "✓", "b-md")}{b("b4", "⌂", "b-sm")}{b("b5", "⬚", "b-sm")}{b("b6", "?", "b-sm")}
   </div>
+</div></section>
+
+<section id="nouveautes"><div class="wrap">
+  <div class="rv"><div class="eyebrow">{t["nw_eye"]}</div><h2>{t["nw_h"]}</h2><p class="sub">{t["nw_sub"]}</p></div>
+  <div class="news rv"><div class="col"><h3>{t["nw_now_h"]}</h3><ul>{"".join(f"<li>{x}</li>" for x in t["nw_now"])}</ul></div>
+  <div class="col soon"><h3>{t["nw_soon_h"]}</h3><ul>{"".join(f"<li>{x}</li>" for x in t["nw_soon"])}</ul></div></div>
+  <p class="rv" style="color:var(--muted);font-size:15px;margin-top:20px">{t["nw_note"]}</p>
 </div></section>
 
 <section><div class="wrap">
