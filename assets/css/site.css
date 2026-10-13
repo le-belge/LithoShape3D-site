@@ -119,8 +119,9 @@ h2 { font-size: clamp(30px, 4vw, 46px); line-height: 1.1; margin: 10px 0 16px; l
 .bx:hover { border-color: var(--line2); transform: translateY(-3px); }
 .bx h4 { margin: 0 0 8px; font-size: 20px; letter-spacing: -.01em; } .bx p { margin: 0; color: var(--muted); font-size: 15.5px; }
 .bx .ic { width: 44px; height: 44px; border-radius: 13px; background: #ffffff0d; display: grid; place-items: center; margin-bottom: 18px; color: var(--teal); font-weight: 800; font-size: 20px; }
-.b-lg { grid-column: span 4; min-height: 260px; background: linear-gradient(135deg, #1a2234, #131a28); } .b-md { grid-column: span 2; } .b-sm { grid-column: span 2; }
-.b-lg img { margin-top: 20px; border-radius: 12px; border: 1px solid var(--line2); }
+.b-lg { grid-column: span 6; min-height: 260px; background: linear-gradient(135deg, #1a2234, #131a28); } .b-md { grid-column: span 2; } .b-sm { grid-column: span 2; }
+.b-lg img { margin-top: 20px; border-radius: 12px; border: 1px solid var(--line2); width: 100%; height: auto; }
+.bento > .bx:nth-child(n+5) { grid-column: span 3; }
 
 /* idees */
 .ideas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
@@ -149,7 +150,7 @@ footer .row { display: flex; flex-wrap: wrap; gap: 14px 32px; justify-content: s
 
 @media (max-width: 980px) {
   .hero .grid, .compare-wrap, .panel { grid-template-columns: 1fr; gap: 36px; } .hero { padding: 54px 0 56px; } section { padding: 68px 0; }
-  .steps, .dl, .ideas { grid-template-columns: 1fr; } .bento { grid-template-columns: 1fr; } .b-lg, .b-md, .b-sm { grid-column: auto; }
+  .steps, .dl, .ideas { grid-template-columns: 1fr; } .bento { grid-template-columns: 1fr; } .b-lg, .b-md, .b-sm, .bento > .bx:nth-child(n+5) { grid-column: auto; }
   .shot .prod { right: 8px; bottom: -22px; }
   .burger { display: block; } nav.main { display: none; position: absolute; top: 68px; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: var(--bg); border-bottom: 1px solid var(--line); padding: 8px 24px 18px; }
   nav.main.open { display: flex; } nav.main a { padding: 14px 4px; border-radius: 0; border-bottom: 1px solid var(--line); } nav.main a.lang, nav.main a.nav-cta { margin: 10px 0 0; text-align: center; border: 1px solid var(--line2); border-radius: 12px; }
