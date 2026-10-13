@@ -15,7 +15,7 @@
 
   // curseur eteinte / allumee
   var range = $('#cmp'), topImg = $('#cmp-top'), handle = $('#cmp-handle');
-  function setCmp(v) { topImg.style.clipPath = 'inset(0 ' + (100 - v) + '% 0 0)'; handle.style.left = v + '%'; }
+  function setCmp(v) { var c = 'inset(0 ' + (100 - v) + '% 0 0)'; topImg.style.clipPath = c; topImg.style.webkitClipPath = c; handle.style.left = v + '%'; }
   if (range) { range.addEventListener('input', function () { setCmp(range.value); }); setCmp(range.value); }
 
   // onglets des creations
